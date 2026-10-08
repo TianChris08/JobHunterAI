@@ -1,0 +1,17 @@
+PUT http://localhost:8080/api/experiences/2
+Content-Type: application/json
+X-Csrf-Token: T1WQ9JcoNpujY5ULqb9xDZxfTrpIQTXEfsRRVfU4dv8X4UCgfGynzaYeBKmOU_Nqm5JFaaU5Y4NxeFbpHPQwZ8BaF5wvhHHD
+
+{
+  "companyName": "Empresa TEST3",
+  "position": "Desarrollador",
+  "type": "Trabajo",
+  "startDate": "2025-01-01",
+  "endDate": null,
+  "currentlyWorking": true,
+  "description": "Actualización mediante DTO",
+  "responsibilities": "Prueba de modificación propia",
+  "achievements": "PUT correcto",
+  "userNotes": "TEST PUT",
+  "visibility": true
+}

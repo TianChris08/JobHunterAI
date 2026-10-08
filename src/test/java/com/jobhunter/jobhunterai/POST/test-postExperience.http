@@ -1,0 +1,17 @@
+POST http://localhost:8080/api/experiences
+Content-Type: application/json
+X-Csrf-Token: fC_AiJsbNCLjbyn4SlKhCNfRnHmh3L0PkSaRy5hVUlx9pjHvSR74sP4tVkHOXUibe3-VaeDisRvDv9giphD18_tlZD0cxweO
+
+{
+  "companyName": "Empresa DTO",
+  "position": "Desarrollador Junior",
+  "type": "Trabajo",
+  "startDate": "2026-01-01",
+  "endDate": "2026-06-30",
+  "currentlyWorking": false,
+  "description": "Prueba del ExperienceRequest",
+  "responsibilities": "Probar DTO de entrada",
+  "achievements": "Ninguno",
+  "userNotes": "TEST DTO",
+  "visibility": true
+}

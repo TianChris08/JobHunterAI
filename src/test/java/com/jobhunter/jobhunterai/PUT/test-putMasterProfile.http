@@ -1,0 +1,11 @@
+PUT http://localhost:8080/api/master-profiles/1
+Content-Type: application/json
+
+{
+  "headline": "Java & Spring Boot Developer",
+  "professionalSummary": "Backend developer focused on Java, Spring Boot and PostgreSQL.",
+  "country": "Spain",
+  "city": "Castellón de la Plana",
+  "postalCode": "12004",
+  "fullAddress": "Updated test address"
+}

@@ -1,0 +1,10 @@
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+Cookie: JSESSIONID=A6102D6C13B3240895C68D8F65F1F205
+X-CSRF-TOKEN: 6-_wR7pwlVTTDvgOrNh7KSTkNShtuAYwLNJGRgNwc8o3_xDOj97EcNsW9jf-a8s6z_VPGRSFGBBe3mQdH-AifjQREv9Wx3Gr
+
+{
+  "name": "Christian",
+  "email": "test3@jobhunter.com",
+  "password": "UnaPasswordDePrueba123!"
+}

@@ -1,0 +1,15 @@
+POST http://localhost:8080/api/job-preferences
+Content-Type: application/json
+
+{
+  "professionalProfile": {
+    "id": 2
+  },
+  "remotePreference": "Hybrid",
+  "relocationPreference": "No",
+  "maximumDistanceKm": 30,
+  "employmentType": "Full-time",
+  "minimumSalary": 1800,
+  "salaryCurrency": "EUR",
+  "preferredIndustries": "Technology, Software"
+}

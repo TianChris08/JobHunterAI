@@ -1,0 +1,13 @@
+POST http://localhost:8080/api/education
+Content-Type: application/json
+
+{
+  "masterProfile": {
+    "id": 1
+  },
+  "title": "Higher Technician in Multiplatform Application Development",
+  "institution": "IES El Caminàs",
+  "startDate": "2024-09-01",
+  "endDate": "2026-06-30",
+  "status": "Completed"
+}

@@ -1,0 +1,14 @@
+PUT http://localhost:8080/api/certifications/1
+Content-Type: application/json
+
+{
+  "masterProfile": {
+    "id": 1
+  },
+  "name": "Java Programming Certificate - Updated",
+  "issuer": "Oracle",
+  "issueDate": "2026-05-15",
+  "expirationDate": "2029-05-15",
+  "credentialId": "JAVA-2026-001",
+  "credentialUrl": "https://example.com/certificate-updated"
+}

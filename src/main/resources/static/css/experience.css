@@ -1,0 +1,632 @@
+/* =========================
+   EXPERIENCE PAGE
+   ========================= */
+
+.content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 0;
+
+    flex: 1;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 42px 28px 60px;
+}
+
+.workspace {
+    width: min(100%, 1000px);
+    max-width: 100%;
+
+    min-width: 0;
+
+    margin: 0 auto;
+}
+
+
+/* =========================
+   PAGE HEADER
+   ========================= */
+
+.page-head {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 32px;
+}
+
+.page-head > * {
+    min-width: 0;
+}
+
+.page-head > div {
+    max-width: 100%;
+}
+
+.eyebrow {
+    margin-bottom: 7px;
+
+    color: var(--accent);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.page-head h1 {
+    margin: 0 0 8px;
+
+    font-size: 32px;
+    line-height: 1.1;
+
+    letter-spacing: -0.035em;
+
+    overflow-wrap: anywhere;
+}
+
+.page-head p {
+    max-width: 600px;
+
+    margin: 0;
+
+    color: var(--text-muted);
+
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.primary,
+.secondary,
+.danger {
+    border-radius: 10px;
+
+    padding: 10px 14px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+            background 0.15s ease,
+            border-color 0.15s ease,
+            transform 0.15s ease;
+}
+
+.primary {
+    flex: 0 0 auto;
+
+    border: 0;
+
+    background: var(--accent);
+    color: white;
+
+    white-space: nowrap;
+}
+
+.primary:hover {
+    background: var(--accent-hover);
+}
+
+.secondary {
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+    color: var(--text);
+}
+
+.secondary:hover {
+    background: var(--surface-secondary);
+}
+
+.danger {
+    border: 1px solid #f0d7da;
+
+    background: #fff7f8;
+    color: #d94a59;
+}
+
+.danger:hover {
+    background: #ffedef;
+}
+
+.primary:active,
+.secondary:active,
+.danger:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   EXPERIENCE LIST
+   ========================= */
+
+.experiences {
+    width: 100%;
+    min-width: 0;
+
+    display: grid;
+    gap: 16px;
+}
+
+
+/* =========================
+   EXPERIENCE CARD
+   ========================= */
+
+.experience {
+    width: 100%;
+    min-width: 0;
+
+    padding: 22px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow:
+            0 5px 20px rgba(20, 25, 40, 0.035);
+}
+
+
+/* =========================
+   EXPERIENCE HEAD
+   ========================= */
+
+.experience-head {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.experience-head > * {
+    min-width: 0;
+}
+
+.company-row {
+    min-width: 0;
+    flex: 1;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 13px;
+}
+
+.company-icon {
+    width: 42px;
+    height: 42px;
+
+    flex: 0 0 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    background: #eeeafd;
+    color: var(--accent);
+
+    font-size: 16px;
+    font-weight: 750;
+}
+
+.company {
+    min-width: 0;
+
+    margin-bottom: 3px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.position {
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 500;
+
+    overflow-wrap: anywhere;
+}
+
+.dates {
+    margin-top: 5px;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================
+   CARD MENU
+   ========================= */
+
+.menu {
+    flex: 0 0 auto;
+
+    display: flex;
+    gap: 5px;
+}
+
+.icon-btn {
+    width: 32px;
+    height: 32px;
+
+    flex: 0 0 32px;
+
+    display: grid;
+    place-items: center;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: transparent;
+    color: var(--text-muted);
+
+    cursor: pointer;
+}
+
+.icon-btn:hover {
+    background: var(--surface-secondary);
+    color: var(--text);
+}
+
+
+/* =========================
+   EXPERIENCE CONTENT
+   ========================= */
+
+.experience-body {
+    width: 100%;
+    min-width: 0;
+
+    margin-top: 20px;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+    line-height: 1.65;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 16px;
+
+    min-width: 0;
+}
+
+.tag {
+    max-width: 100%;
+
+    padding: 5px 9px;
+
+    border-radius: 999px;
+
+    background: var(--surface-secondary);
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================
+   CARD ACTIONS
+   ========================= */
+
+.experience-actions {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    margin-top: 20px;
+    padding-top: 16px;
+
+    border-top: 1px solid var(--border);
+}
+
+
+/* =========================
+   EMPTY STATE
+   ========================= */
+
+.empty {
+    width: 100%;
+    min-width: 0;
+
+    padding: 55px 30px;
+
+    border: 1px dashed var(--border);
+    border-radius: 16px;
+
+    background: var(--surface);
+
+    color: var(--text-muted);
+
+    text-align: center;
+
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+}
+
+.empty strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--text);
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   FORM
+   ========================= */
+
+#form {
+    width: 100%;
+    min-width: 0;
+
+    margin-bottom: 20px;
+}
+
+.form-card {
+    width: 100%;
+    min-width: 0;
+
+    margin-bottom: 20px;
+    padding: 24px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow:
+            0 5px 20px rgba(20, 25, 40, 0.035);
+}
+
+.form-grid {
+    width: 100%;
+    min-width: 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.field {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.field.full {
+    grid-column: 1 / -1;
+}
+
+.field label {
+    color: var(--text);
+
+    font-size: 12px;
+    font-weight: 650;
+
+    overflow-wrap: anywhere;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    padding: 10px 11px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    outline: none;
+
+    font: inherit;
+    font-size: 13px;
+
+    transition:
+            border-color 0.15s ease,
+            box-shadow 0.15s ease;
+}
+
+.field textarea {
+    min-height: 100px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    border-color: var(--accent);
+
+    box-shadow:
+            0 0 0 3px rgba(109, 93, 252, 0.10);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.field input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.check {
+    min-height: 40px;
+
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.check input {
+    width: auto;
+    min-width: auto;
+}
+
+
+/* =========================
+   FORM ACTIONS
+   ========================= */
+
+.form-actions {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    margin-top: 22px;
+    padding-top: 18px;
+
+    border-top: 1px solid var(--border);
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 800px) {
+
+    .content {
+        padding: 30px 20px 45px;
+    }
+
+    .page-head {
+        flex-direction: column;
+    }
+
+    .page-head .primary {
+        align-self: flex-start;
+    }
+
+    .form-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .field.full {
+        grid-column: auto;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .content {
+        padding: 24px 14px 40px;
+    }
+
+    .page-head {
+        gap: 20px;
+    }
+
+    .page-head h1 {
+        font-size: 27px;
+    }
+
+    .page-head .primary {
+        width: 100%;
+        align-self: stretch;
+    }
+
+    .experience {
+        padding: 17px;
+    }
+
+    .experience-head {
+        gap: 10px;
+    }
+
+    .company-row {
+        gap: 10px;
+    }
+
+    .experience-actions {
+        justify-content: stretch;
+    }
+
+    .experience-actions button {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .form-card {
+        padding: 17px;
+    }
+
+    .form-actions {
+        flex-wrap: wrap;
+    }
+
+    .form-actions button {
+        min-width: 0;
+    }
+}

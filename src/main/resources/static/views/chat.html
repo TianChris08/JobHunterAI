@@ -1,0 +1,74 @@
+<section class="chat">
+
+    <div class="messages" id="messages">
+
+        <div class="welcome" id="welcome">
+
+            <div class="hero-icon">✦</div>
+
+            <h1>¿En qué puedo ayudarte?</h1>
+
+            <p>
+                Cuéntame sobre ti, tu experiencia o lo que buscas
+                profesionalmente. Iremos construyendo tu perfil juntos.
+            </p>
+
+            <div class="suggestions">
+
+                <button onclick="suggest('Quiero contar mi experiencia laboral')">
+                    💼 Contar mi experiencia
+                </button>
+
+                <button onclick="suggest('Quiero mejorar mi perfil profesional')">
+                    👤 Mejorar mi perfil
+                </button>
+
+                <button onclick="suggest('Quiero buscar trabajo')">
+                    🔎 Buscar trabajo
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="composer-wrap">
+
+    <div class="composer">
+
+        <textarea
+                id="input"
+                placeholder="Escribe algo o pulsa el micrófono…"
+                rows="1"
+                oninput="resize(this)"
+                onkeydown="key(event)"
+        ></textarea>
+
+        <button
+                class="mic"
+                id="mic"
+                onclick="toggleMic()"
+                title="Usar micrófono"
+        >
+            🎙
+        </button>
+
+        <button
+                class="send"
+                onclick="send()"
+                title="Enviar"
+        >
+            ↑
+        </button>
+
+    </div>
+
+    <div class="hint">
+        Pulsa Enter para enviar · Shift + Enter para nueva línea
+    </div>
+
+</div>

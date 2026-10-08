@@ -1,0 +1,13 @@
+PUT http://localhost:8080/api/user-languages/1
+Content-Type: application/json
+
+{
+  "masterProfile": {
+    "id": 1
+  },
+  "language": "Italian",
+  "proficiencyLevel": "C2",
+  "confidence": 100,
+  "hasCertification": true,
+  "certificationIssuer": "Official Language Certificate"
+}

@@ -1,0 +1,14 @@
+POST http://localhost:8080/api/certifications
+Content-Type: application/json
+
+{
+  "masterProfile": {
+    "id": 1
+  },
+  "name": "Java Programming Certificate",
+  "issuer": "Oracle",
+  "issueDate": "2026-05-15",
+  "expirationDate": null,
+  "credentialId": "JAVA-2026-001",
+  "credentialUrl": "https://example.com/certificate"
+}

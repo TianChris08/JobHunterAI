@@ -1,0 +1,18 @@
+PUT http://localhost:8080/api/experiences/2
+Content-Type: application/json
+Cookie: JSESSIONID=34633DBDD13DF6181514BCB7FBF8B17F
+X-CSRF-TOKEN: 3I61tDh6_YD3B57EktyzdxZiUPzHnVGPWKIsQ23ePqXOAons7r7Q0A9OzbHaPqn0pPGHQiFQfZ6irDKibcYcdw64Bp3-N-rb
+
+{
+  "companyName": "HACK TEST",
+  "position": "Acceso indebido",
+  "type": "Trabajo",
+  "startDate": "2025-01-01",
+  "endDate": "2025-12-31",
+  "currentlyWorking": false,
+  "description": "TEST IDOR",
+  "responsibilities": "TEST IDOR",
+  "achievements": "TEST IDOR",
+  "userNotes": "MODIFICADO POR TEST3",
+  "visibility": true
+}

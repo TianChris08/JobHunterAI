@@ -1,0 +1,13 @@
+POST http://localhost:8080/api/user-languages
+Content-Type: application/json
+
+{
+  "masterProfile": {
+    "id": 1
+  },
+  "language": "Italian",
+  "proficiencyLevel": "C1",
+  "confidence": 90,
+  "hasCertification": true,
+  "certificationIssuer": "Official Language Certificate"
+}

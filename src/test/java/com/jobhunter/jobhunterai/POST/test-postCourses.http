@@ -1,0 +1,14 @@
+POST http://localhost:8080/api/courses
+Content-Type: application/json
+
+{
+  "masterProfile": {
+    "id": 1
+  },
+  "name": "Spring Boot Fundamentals",
+  "provider": "Udemy",
+  "duration": "20 hours",
+  "startDate": "2026-04-01",
+  "completionDate": "2026-05-01",
+  "credentialUrl": "https://example.com/course"
+}

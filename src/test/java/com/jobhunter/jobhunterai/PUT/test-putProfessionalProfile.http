@@ -1,0 +1,11 @@
+PUT http://localhost:8080/api/professional-profiles/1
+Content-Type: application/json
+
+{
+  "masterProfile": {
+    "id": 1
+  },
+  "name": "Java Backend Developer Updated",
+  "headline": "Junior Backend Developer",
+  "professionalSummary": "Java, Spring Boot and PostgreSQL backend developer."
+}

@@ -1,0 +1,15 @@
+PUT http://localhost:8080/api/job-preferences/1
+Content-Type: application/json
+
+{
+  "professionalProfile": {
+    "id": 2
+  },
+  "remotePreference": "Remote",
+  "relocationPreference": "Yes",
+  "maximumDistanceKm": 50,
+  "employmentType": "Full-time",
+  "minimumSalary": 2000,
+  "salaryCurrency": "EUR",
+  "preferredIndustries": "Technology, Software, IT"
+}

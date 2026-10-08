@@ -1,0 +1,8 @@
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+X-CSRF-TOKEN: T1WQ9JcoNpujY5ULqb9xDZxfTrpIQTXEfsRRVfU4dv8X4UCgfGynzaYeBKmOU_Nqm5JFaaU5Y4NxeFbpHPQwZ8BaF5wvhHHD
+
+{
+  "email": "test3@jobhunter.com",
+  "password": "ContrasenaSegura12345!"
+}

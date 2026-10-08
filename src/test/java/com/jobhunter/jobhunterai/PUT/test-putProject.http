@@ -1,0 +1,18 @@
+PUT http://localhost:8080/api/projects/1
+Content-Type: application/json
+
+{
+  "masterProfile": {
+    "id": 1
+  },
+  "name": "JobHunterAI - Updated",
+  "description": "AI-powered job hunting platform with a conversational user experience.",
+  "startDate": "2026-08-01",
+  "endDate": null,
+  "role": "Backend Developer",
+  "achievements": "Implemented the Spring Boot backend and PostgreSQL data model.",
+  "repositoryUrl": "https://github.com/example/jobhunterai",
+  "websiteUrl": "https://example.com/jobhunterai",
+  "aiUsagePercentage": 50,
+  "aiUsageDescription": "AI was used mainly for assistance with architecture, code generation and debugging."
+}

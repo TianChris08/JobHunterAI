@@ -1,0 +1,11 @@
+POST http://localhost:8080/api/user-skills
+Content-Type: application/json
+
+{
+  "masterProfile": {
+    "id": 1
+  },
+  "skill": {
+    "id": 1
+  }
+}

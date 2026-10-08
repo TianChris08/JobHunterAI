@@ -1,0 +1,11 @@
+POST http://localhost:8080/api/professional-profiles
+Content-Type: application/json
+
+{
+  "masterProfile": {
+    "id": 1
+  },
+  "name": "Java Backend Developer",
+  "headline": "Junior Java Backend Developer",
+  "professionalSummary": "Backend developer focused on Java, Spring Boot and PostgreSQL."
+}

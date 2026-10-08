@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JobHunterAI</title>
+
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/chat.css">
+    <link rel="stylesheet" href="/css/experience.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ==================== SIDEBAR ==================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="logo">J</div>
+            <span>JobHunterAI</span>
+        </div>
+
+        <button class="new-chat" data-route="/chat">
+            ＋ Nueva conversación
+        </button>
+
+        <div class="sidebar-section">
+            <div class="sidebar-title">Navegación</div>
+
+            <nav class="navigation">
+
+                <button class="nav-item" data-route="/chat">
+                    <span>✦</span>
+                    <span>Asistente IA</span>
+                </button>
+
+                <button class="nav-item" data-route="/experience">
+                    <span>💼</span>
+                    <span>Mi experiencia</span>
+                </button>
+
+                <button class="nav-item" data-route="/education">
+                    <span>🎓</span>
+                    <span>Educación</span>
+                </button>
+
+                <button class="nav-item" data-route="/skills">
+                    <span>⚡</span>
+                    <span>Habilidades</span>
+                </button>
+
+                <button class="nav-item" data-route="/languages">
+                    <span>🌐</span>
+                    <span>Idiomas</span>
+                </button>
+
+                <button class="nav-item" data-route="/certifications">
+                    <span>🏆</span>
+                    <span>Certificaciones</span>
+                </button>
+
+                <button class="nav-item" data-route="/courses">
+                    <span>📚</span>
+                    <span>Cursos</span>
+                </button>
+
+                <button class="nav-item" data-route="/projects">
+                    <span>🚀</span>
+                    <span>Proyectos</span>
+                </button>
+
+            </nav>
+        </div>
+
+        <div class="sidebar-bottom">
+            <p>Tu perfil se construye contigo.</p>
+            <span>La IA organiza y tú decides.</span>
+        </div>
+
+    </aside>
+
+
+    <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div id="page-title">
+                JobHunterAI
+            </div>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                Todo guardado
+            </div>
+
+        </header>
+
+
+        <!--
+            Aquí se cargará la vista actual.
+
+            Ejemplo:
+            /chat        → Chat
+            /experience → Experiencia
+            /education  → Educación
+        -->
+
+        <div id="app"></div>
+
+    </main>
+
+</div>
+
+
+<!-- ==================== JAVASCRIPT ==================== -->
+
+<script src="/js/app.js"></script>
+
+</body>
+</html>

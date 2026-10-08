@@ -1,0 +1,7 @@
+POST http://localhost:8080/api/skills
+Content-Type: application/json
+
+{
+  "name": "Spring Boot",
+  "normalizedName": "spring boot"
+}
