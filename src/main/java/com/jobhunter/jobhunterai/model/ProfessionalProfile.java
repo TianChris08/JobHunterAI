@@ -22,6 +22,21 @@ public class ProfessionalProfile {
     @Column(columnDefinition = "TEXT")
     private String professionalSummary;
 
+    @OneToOne(
+            mappedBy = "professionalProfile",
+            cascade = CascadeType.REMOVE,
+            orphanRemoval = true
+    )
+    private JobPreferences jobPreferences;
+
+    public JobPreferences getJobPreferences() {
+        return jobPreferences;
+    }
+
+    public void setJobPreferences(JobPreferences jobPreferences) {
+        this.jobPreferences = jobPreferences;
+    }
+
     public ProfessionalProfile() {}
 
     public Long getId() {

@@ -1,7 +1,9 @@
 package com.jobhunter.jobhunterai.controller;
 
-import com.jobhunter.jobhunterai.model.Skill;
+import com.jobhunter.jobhunterai.dto.SkillRequest;
+import com.jobhunter.jobhunterai.dto.SkillResponse;
 import com.jobhunter.jobhunterai.service.SkillService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,29 +19,18 @@ public class SkillController {
     }
 
     @PostMapping
-    public Skill createSkill(@RequestBody Skill skill) {
-        return skillService.saveSkill(skill);
+    @ResponseStatus(HttpStatus.CREATED)
+    public SkillResponse createSkill(@RequestBody SkillRequest request) {
+        return skillService.saveSkill(request);
     }
 
     @GetMapping
-    public List<Skill> getSkills() {
+    public List<SkillResponse> getSkills() {
         return skillService.getSkills();
     }
 
     @GetMapping("/{id}")
-    public Skill getSkill(@PathVariable Long id) {
+    public SkillResponse getSkill(@PathVariable Long id) {
         return skillService.getSkill(id);
-    }
-
-    @PutMapping("/{id}")
-    public Skill updateSkill(
-            @PathVariable Long id,
-            @RequestBody Skill skill) {
-        return skillService.updateSkill(id, skill);
-    }
-
-    @DeleteMapping("/{id}")
-    public void deleteSkill(@PathVariable Long id) {
-        skillService.deleteSkill(id);
     }
 }

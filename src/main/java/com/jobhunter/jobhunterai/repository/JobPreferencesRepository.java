@@ -1,7 +1,13 @@
+
 package com.jobhunter.jobhunterai.repository;
 
 import com.jobhunter.jobhunterai.model.JobPreferences;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface JobPreferencesRepository extends JpaRepository<JobPreferences, Long> {
+import java.util.List;
+
+public interface JobPreferencesRepository
+        extends JpaRepository<JobPreferences, Long> {
+
+    List<JobPreferences> findByProfessionalProfileMasterProfileUserEmail(String email);
 }

@@ -1,10 +1,16 @@
 package com.jobhunter.jobhunterai.service;
 
+import com.jobhunter.jobhunterai.dto.SkillRequest;
+import com.jobhunter.jobhunterai.dto.SkillResponse;
 import com.jobhunter.jobhunterai.model.Skill;
 import com.jobhunter.jobhunterai.repository.SkillRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
+import java.text.Normalizer;
 import java.util.List;
+import java.util.Locale;
 
 @Service
 public class SkillService {
@@ -15,29 +21,49 @@ public class SkillService {
         this.skillRepository = skillRepository;
     }
 
-    public Skill saveSkill(Skill skill) {
-        return skillRepository.save(skill);
+    public SkillResponse saveSkill(SkillRequest request) {
+        if (request.getName() == null || request.getName().isBlank()) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST, "El nombre es obligatorio");
+        }
+
+        String name = request.getName().trim();
+        String normalizedName = normalize(name);
+
+        return skillRepository.findByNormalizedName(normalizedName)
+                .map(SkillResponse::new)
+                .orElseGet(() -> {
+                    Skill skill = new Skill();
+                    skill.setName(name);
+                    skill.setNormalizedName(normalizedName);
+
+                    return new SkillResponse(skillRepository.save(skill));
+                });
     }
 
-    public List<Skill> getSkills() {
-        return skillRepository.findAll();
+    public List<SkillResponse> getSkills() {
+        return skillRepository.findAll()
+                .stream()
+                .map(SkillResponse::new)
+                .toList();
     }
 
-    public Skill getSkill(Long id) {
-        return skillRepository.findById(id)
-                .orElseThrow();
+    public SkillResponse getSkill(Long id) {
+        Skill skill = skillRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND, "Habilidad no encontrada"));
+
+        return new SkillResponse(skill);
     }
 
-    public Skill updateSkill(Long id, Skill skill) {
-        Skill existingSkill = getSkill(id);
+    private String normalize(String name) {
+        String normalized = Normalizer.normalize(
+                name, Normalizer.Form.NFD);
 
-        existingSkill.setName(skill.getName());
-        existingSkill.setNormalizedName(skill.getNormalizedName());
-
-        return skillRepository.save(existingSkill);
-    }
-
-    public void deleteSkill(Long id) {
-        skillRepository.deleteById(id);
+        return normalized
+                .replaceAll("\\p{M}", "")
+                .trim()
+                .replaceAll("\\s+", " ")
+                .toLowerCase(Locale.ROOT);
     }
 }

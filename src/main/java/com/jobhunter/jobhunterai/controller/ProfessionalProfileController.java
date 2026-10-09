@@ -1,7 +1,10 @@
+
 package com.jobhunter.jobhunterai.controller;
 
-import com.jobhunter.jobhunterai.model.ProfessionalProfile;
+import com.jobhunter.jobhunterai.dto.ProfessionalProfileRequest;
+import com.jobhunter.jobhunterai.dto.ProfessionalProfileResponse;
 import com.jobhunter.jobhunterai.service.ProfessionalProfileService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,34 +15,38 @@ public class ProfessionalProfileController {
 
     private final ProfessionalProfileService professionalProfileService;
 
-    public ProfessionalProfileController(ProfessionalProfileService professionalProfileService) {
+    public ProfessionalProfileController(
+            ProfessionalProfileService professionalProfileService) {
         this.professionalProfileService = professionalProfileService;
     }
 
     @PostMapping
-    public ProfessionalProfile createProfessionalProfile(
-            @RequestBody ProfessionalProfile professionalProfile) {
-        return professionalProfileService.saveProfessionalProfile(professionalProfile);
+    @ResponseStatus(HttpStatus.CREATED)
+    public ProfessionalProfileResponse createProfessionalProfile(
+            @RequestBody ProfessionalProfileRequest request) {
+        return professionalProfileService.saveProfessionalProfile(request);
     }
 
     @GetMapping
-    public List<ProfessionalProfile> getProfessionalProfiles() {
+    public List<ProfessionalProfileResponse> getProfessionalProfiles() {
         return professionalProfileService.getProfessionalProfiles();
     }
 
     @GetMapping("/{id}")
-    public ProfessionalProfile getProfessionalProfile(@PathVariable Long id) {
+    public ProfessionalProfileResponse getProfessionalProfile(
+            @PathVariable Long id) {
         return professionalProfileService.getProfessionalProfile(id);
     }
 
     @PutMapping("/{id}")
-    public ProfessionalProfile updateProfessionalProfile(
+    public ProfessionalProfileResponse updateProfessionalProfile(
             @PathVariable Long id,
-            @RequestBody ProfessionalProfile professionalProfile) {
-        return professionalProfileService.updateProfessionalProfile(id, professionalProfile);
+            @RequestBody ProfessionalProfileRequest request) {
+        return professionalProfileService.updateProfessionalProfile(id, request);
     }
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteProfessionalProfile(@PathVariable Long id) {
         professionalProfileService.deleteProfessionalProfile(id);
     }

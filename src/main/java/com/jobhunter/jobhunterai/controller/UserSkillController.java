@@ -1,7 +1,9 @@
 package com.jobhunter.jobhunterai.controller;
 
-import com.jobhunter.jobhunterai.model.UserSkill;
+import com.jobhunter.jobhunterai.dto.UserSkillRequest;
+import com.jobhunter.jobhunterai.dto.UserSkillResponse;
 import com.jobhunter.jobhunterai.service.UserSkillService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,28 +19,31 @@ public class UserSkillController {
     }
 
     @PostMapping
-    public UserSkill createUserSkill(@RequestBody UserSkill userSkill) {
-        return userSkillService.saveUserSkill(userSkill);
+    @ResponseStatus(HttpStatus.CREATED)
+    public UserSkillResponse createUserSkill(
+            @RequestBody UserSkillRequest request) {
+        return userSkillService.saveUserSkill(request);
     }
 
     @GetMapping
-    public List<UserSkill> getUserSkills() {
+    public List<UserSkillResponse> getUserSkills() {
         return userSkillService.getUserSkills();
     }
 
     @GetMapping("/{id}")
-    public UserSkill getUserSkill(@PathVariable Long id) {
+    public UserSkillResponse getUserSkill(@PathVariable Long id) {
         return userSkillService.getUserSkill(id);
     }
 
     @PutMapping("/{id}")
-    public UserSkill updateUserSkill(
+    public UserSkillResponse updateUserSkill(
             @PathVariable Long id,
-            @RequestBody UserSkill userSkill) {
-        return userSkillService.updateUserSkill(id, userSkill);
+            @RequestBody UserSkillRequest request) {
+        return userSkillService.updateUserSkill(id, request);
     }
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteUserSkill(@PathVariable Long id) {
         userSkillService.deleteUserSkill(id);
     }

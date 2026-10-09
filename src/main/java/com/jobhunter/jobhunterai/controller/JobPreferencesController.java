@@ -1,7 +1,10 @@
+
 package com.jobhunter.jobhunterai.controller;
 
-import com.jobhunter.jobhunterai.model.JobPreferences;
+import com.jobhunter.jobhunterai.dto.JobPreferencesRequest;
+import com.jobhunter.jobhunterai.dto.JobPreferencesResponse;
 import com.jobhunter.jobhunterai.service.JobPreferencesService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,33 +15,37 @@ public class JobPreferencesController {
 
     private final JobPreferencesService jobPreferencesService;
 
-    public JobPreferencesController(JobPreferencesService jobPreferencesService) {
+    public JobPreferencesController(
+            JobPreferencesService jobPreferencesService) {
         this.jobPreferencesService = jobPreferencesService;
     }
 
     @PostMapping
-    public JobPreferences createJobPreferences(@RequestBody JobPreferences jobPreferences) {
-        return jobPreferencesService.saveJobPreferences(jobPreferences);
+    @ResponseStatus(HttpStatus.CREATED)
+    public JobPreferencesResponse createJobPreferences(
+            @RequestBody JobPreferencesRequest request) {
+        return jobPreferencesService.saveJobPreferences(request);
     }
 
     @GetMapping
-    public List<JobPreferences> getJobPreferences() {
+    public List<JobPreferencesResponse> getJobPreferences() {
         return jobPreferencesService.getJobPreferences();
     }
 
     @GetMapping("/{id}")
-    public JobPreferences getJobPreferences(@PathVariable Long id) {
+    public JobPreferencesResponse getJobPreferences(@PathVariable Long id) {
         return jobPreferencesService.getJobPreferences(id);
     }
 
     @PutMapping("/{id}")
-    public JobPreferences updateJobPreferences(
+    public JobPreferencesResponse updateJobPreferences(
             @PathVariable Long id,
-            @RequestBody JobPreferences jobPreferences) {
-        return jobPreferencesService.updateJobPreferences(id, jobPreferences);
+            @RequestBody JobPreferencesRequest request) {
+        return jobPreferencesService.updateJobPreferences(id, request);
     }
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteJobPreferences(@PathVariable Long id) {
         jobPreferencesService.deleteJobPreferences(id);
     }
